@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sketch 1</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+
+<body>
+
+<style>
+.JOSH{
+	display:"flex",
+}
+
+</style>
+  <script>
+//sets variable color and size
+let color="yellow"
+let inputValue; // JK given
+let opacityValue; //JK GIVEN
+
+function setup() {
+  createCanvas(400, 400);
+	background(0);
+}
+function draw() {
+	inputValue = document.getElementById("slider").value; // JK given
+	opacityValue = document.getElementById("slider2").value; // JK GIVEN
+	
+	
+	if(mouseIsPressed){
+		noStroke();
+		
+	
+		//changes color depending on click
+	if(mouseX>=75 && mouseY>=25 && mouseX<=125 && mouseY<=75){
+		color="yellow"
+		
+
+	}
+		//changes color depending on click
+	if(mouseX>=175 && mouseY>=25 && mouseX<=225 && mouseY<=75){
+		color="pink"
+	}
+		//changes color depending on click
+	if(mouseX>=275 && mouseY>=25 && mouseX<=325 && mouseY<=75){
+		color="blue"
+	}
+		//erase
+	if(mouseX>=330 && mouseY>=360 && mouseX<=390 && mouseY<=390){
+		color="black"
+		
+
+	}
+	
+		if(mouseX>=30 && mouseY>=325 && mouseX<=70 && mouseY<=350){
+		background(0);
+		color="black"	
+		
+	}
+		
+	// sets color
+	if(color=="yellow"){
+		fill(255,255,0);
+	}else if(color=="pink"){
+		fill(255,0,255)
+	}else if(color=="blue"){
+		fill(0,255,255)
+		//eraser
+	}else if(color=="black"){
+		fill(0,0,0)
+	}
+		
+		
+		
+		// draws circle and changes size
+		ellipse(mouseX, mouseY,inputValue%101);
+	}
+	//makes a circle
+	stroke(0,0,0)
+	fill(255,255,0)
+	ellipse(100,50,50)
+	
+  //makes a circle
+	fill(255,0,255)
+	ellipse(200,50,50)
+	
+	//makes a circle
+	fill(0,255,255)
+	ellipse(300,50,50)
+	
+	//makes a rectangle
+	fill(255,255,255)
+	rect(330,350,60,40)
+
+	//erase
+	fill(0,0,0)
+	textSize(16)
+	text("Eraser",338,375)
+	
+	//draws an oval
+	fill(255,255,255)
+	ellipse(50,350,70,50)
+	
+	fill(0,0,0)
+	textSize(16)
+	text("clear" ,33,355)
+	
+}
+  </script>
+		<div class="JOSH">
+		<input type="range" min="1" max="50" value="25" id="slider" name="thickness">
+				<label>Thickness</label>
+				<input type="range" min="1" max="50" value="25" id="slider2" name="opacity">
+		<label>Opacity</label>
+					</div>
+
+</body>
+
+</html>

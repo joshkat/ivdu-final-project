@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sketch 2</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+  <script>
+	function setup() {
+  createCanvas(400, 400);
+}
+function draw() {
+  background(220);
+		let x =20
+	
+	while(x<400){
+	
+		fill(0,255,0)
+		rect(x,150,50,50)
+		fill(0,0,0)
+		ellipse(x+10,165,7,13)
+		ellipse(x+40,165,7,13)
+		rect(x+10,185,30,2)
+	  fill(255,255,255)
+		ellipse(x+10,165,5)
+		ellipse(x+40,165,5)
+		fill(255,255,255)
+		
+		x=x+100
+	}
+	for(let x=20; x<400; x+=100){
+		fill(0,255,0)
+		rect(x,250,50,50)
+		fill(0,0,0)
+		ellipse(x+10,265,7,13)
+		ellipse(x+40,265,7,13)
+		rect(x+10,285,30,2)
+	  fill(255,255,255)
+		ellipse(x+10,265,5)
+		ellipse(x+40,265,5)
+		fill(255,255,255)
+		
+	}
+}
+  </script>
+</body>
+</html>

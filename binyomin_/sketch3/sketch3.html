@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sketch 3</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+  <script>
+  let circleX, circleY;
+
+function setup() {
+  createCanvas(400, 400);
+  // Initial circle position
+  circleX = width / 2;
+  circleY = height / 2;
+}
+
+function draw() {
+  background(220);
+
+  // Draw the circle
+  fill(100, 150, 255);
+  ellipse(circleX, circleY, 50);
+
+  // Display the coordinates of the circle
+  fill(0);
+  textSize(16);
+  text("Circle X: " + circleX, 10, 20);
+  text("Circle Y: " + circleY, 10, 40);
+}
+
+// Move the circle when the mouse is pressed
+function mousePressed() {
+  circleX = mouseX;
+  circleY = mouseY;
+}
+
+  </script>
+</body>
+</html>
