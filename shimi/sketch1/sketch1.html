@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sketch 1</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+
+<body>
+  <script>
+  let inputValue; // JK given
+let col = [255, 255, 255];
+
+function setup() {
+  createCanvas(400, 400);
+	background(0);
+}
+
+function draw() {
+	inputValue = document.getElementById("slider").value; // JK given
+	// console.log(inputValue)
+	noStroke();
+	 fill(...col);
+	if(mouseIsPressed){
+	ellipse(mouseX, mouseY, inputValue%31, inputValue%31 );
+		//this is white
+	}	if(mouseIsPressed && mouseX >= 359 && mouseX <= 399 && mouseY >= 0 && mouseY <= 40){
+		col = [255,255,255]
+		// this is red
+	}
+if(mouseIsPressed && mouseX >= 319 && mouseX <= 359 && mouseY >= 0 && mouseY <= 40){
+		col = [255,0,0];
+	// this is green
+	}
+if(mouseIsPressed && mouseX >= 279 && mouseX <= 319 && mouseY >= 0 && mouseY <= 40){
+		col = [0,255,0]
+	// this is blue
+	}
+if(mouseIsPressed && mouseX >= 239 && mouseX <= 279 && mouseY >= 0 && mouseY <= 40){
+		col = [0,0,255];
+	// this is erase
+	}
+if(mouseIsPressed && mouseX >= 0 && mouseX <= 40 && mouseY >= 0 && mouseY <= 40){
+		col = [0,0,0];
+	}
+	if(mouseIsPressed && mouseX >= 0 && mouseX <= 40 && mouseY >= 40 && mouseY <= 80){
+		background(0);
+	}
+	stroke(0,0,0);
+	rectMode(CENTER);
+	
+	// these are the colours
+	fill(255);
+	rect(379,20,40,40);
+	
+	fill(255,0,0);
+	rect(339,20,40,40);
+	
+	fill(0,255,0);
+	rect(299,20,40,40);
+	
+	fill(0,0,255);
+	rect(259,20,40,40);
+	
+// this is the erasor
+	fill(0);
+	stroke(255);
+	rect(20,20,40,40);
+	
+// this is board clear
+	rect(20,60,40,40);
+	fill(255)
+		rect(20,60,30,30);
+	fill(0)
+		rect(20,60,20,20);
+}
+  </script>
+				<input
+					 type="range"
+					 id="slider"
+					 min="0"
+					 max="30"
+					 name="size"
+					 />
+		<label>Size</label>
+</body>
+
+</html>

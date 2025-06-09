@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sketch 3</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+  <script>
+   //variables for fills of ellipses
+let green;
+let yellow;
+let red;
+let point;
+
+
+function setup() {
+  createCanvas(400, 400);
+	
+}
+function draw() {
+  background(200,0,230);
+//initialize variables
+	green = color(255);
+	yellow = color(255);
+	red = color(255);
+	point = dist(mouseX,mouseY,200,200)
+
+//use if statements and the distance function to change the fills of the ellipses depending on your mouse position. think about the radii of the ellispes!!
+
+
+	if(point<26){
+		red = color(255,0,0)
+	}else{
+		red = color(255)
+	}
+		if(point<50&&point>25){
+		yellow = color(255,255,0)
+	}else{
+		yellow = color(255)
+	}
+		if(point>50&&point<75){
+		green = color(0,255,0)
+	}else{
+		green = color(255)
+	}
+//ellipses	
+	fill(green);
+	ellipse(200,200,150,150);
+	
+	fill(yellow)
+	ellipse(200,200,100,100);
+	
+	fill(red);
+	ellipse(200,200,50,50);
+	
+
+}
+  </script>
+</body>
+</html>

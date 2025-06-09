@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sketch 2</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+  <script>
+    let col1;
+let col2;
+let col3;
+//these are random
+let x = 20
+let y = 20
+//these are positions
+let der = true;
+let dir = true;
+let mx
+let my 
+let click 
+// sets values
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+	col1 = random(0,255)
+	col2 = random(0,255)
+	col3 = random(0,255)
+	col4 = random(0,255)
+	col5 = random(0,255)
+	//random values for colors
+
+	mx=mouseX
+	my=mouseY
+  background(240);
+	
+	if (x == 20){
+		der = true
+	} else if(x == 380){
+		der = false
+	}
+	if (der == true){
+		x = x + 5
+	} else {
+		x = x - 10
+	} 
+	 // this makes the horizontal moving rect go right and left
+	if (y == 20){
+		dir = true
+	} else if(y == 380){
+		dir = false
+	}
+	if (dir == true){
+		y = y + 10
+	} else {
+		y = y - 5
+	} 
+	
+	 // this makes the verticle moving rect go up and down
+	rectMode(CENTER)
+	
+	//uncomment below for eppileptic nightmare
+	 // 
+	if (mouseIsPressed){
+		click=true
+	}else {click = false}
+	if (click == true){
+		stroke(col1,col2,col3)
+	}else stroke(0)
+	strokeWeight(mx/8)
+	fill ( my, 50, mx)
+	ellipse (100, 100, 120, 120)
+	strokeWeight(my/16)
+	ellipse (100, 300, 120, 120)
+	strokeWeight(mx/16)
+	ellipse (300, 100, 120, 120)
+	strokeWeight(my/8)
+	ellipse (300, 300, 120, 120)
+	strokeWeight (2)
+	fill (mx, 50, my)
+	rect (x, 200, 80, 40)
+	rect (200, y, 40, 80)
+	
+
+}
+  </script>
+</body>
+</html>
